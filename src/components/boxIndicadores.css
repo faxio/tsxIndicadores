@@ -16,3 +16,16 @@
     border-radius: 12px;
     padding: 5px;
 }
+.home {
+    margin: 5px;
+}
+.busquedaHome{
+    border: 1px solid black;
+}
+.itemsAcordeonHome{
+    background-color: grey;
+}
+
+.contenedorEjes{
+    background-color: white;
+}

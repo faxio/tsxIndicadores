@@ -1,5 +1,6 @@
+import { Ejes } from "./interfaces"
 
-export const ejes = [
+export const ejes : Ejes[]= [
     {id: 1, nombre: "Armonización Curricular y Foco en Posgrados Tecnológicos"},
     {id: 2, nombre: "Alianzas Internacionales"},
     {id: 3, nombre: "Capital Humano y Gestión del Cambio"},
