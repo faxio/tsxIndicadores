@@ -9,7 +9,12 @@ export interface Indicadores {
     meta: any,
     resultado: any,
     fecha: string,
-    evidencias: any[],
+}
+
+export interface Evidencias {
+    id: string,
+    fecha: number,
+    evidencia: any[]
 }
 
 //Valores para crear la navbar, y el home.
@@ -21,5 +26,6 @@ export interface IndicadoresResumidos {
 }
 
 export interface Ejes {
+    id: number,
     nombre: string
 }

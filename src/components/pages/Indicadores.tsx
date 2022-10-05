@@ -13,11 +13,6 @@ export const Indicadores = () => {
       <div className='indicadores'>
         <div className='contenedorNombre'>
           <h2>Nombre indicador</h2>
-          <select>
-            <option> Select </option>
-            <option> Value 1</option>
-            <option> Value 2</option>
-          </select>
         </div>
        
         <h2>Meta: 1</h2>
