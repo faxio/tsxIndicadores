@@ -12,7 +12,13 @@ export const indicadoresResumidos = [
     {    
         id: 1,
         eje: "I+D Aplicado y vinculo industria",
-        nombre: "N° de publicaciones",
+        nombre: "Fondos de I+D de fuentes públicas",
+        descripcion: "Ingresos adjudicados para proyectos de Investigación, Desarrollo e Innovación adjudicados por miembros de la Facultad de Cs. de la Ingeniería desde fuentes de financiamiento públicas en un determinado año.",
+    },
+    {    
+        id: 2,
+        eje: "I+D Aplicado y vinculo industria",
+        nombre: "Fondos de I+D de fuentes privadas",
         descripcion: "Permite conocer la productividad científica, por medio, de los artículos científicos efectuados por los miembros de la Facultad de Ciencias de la Ingeniería e indexados en las bases de datos referenciales WOS y Scopus durante un determinado período.",
     },
 ]
