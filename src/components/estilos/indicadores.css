@@ -1,0 +1,39 @@
+:root{
+    --color-innoving-01: #85DEFF;
+    --color-innoving-02: #FFA859;
+    --color-innoving-03: #9EA3E6;
+    --color-innoving-04: #8CD79F;
+    --color-innoving-05: #FAD786;
+    --color-innoving-06: #FF7A7A;
+    --color-innoving-07: #000000;
+    --color-innoving-08: #FFFFFF;
+    --color-texto-01: #2c2727;
+    --color-boton-01: #51db38;
+    --color-principal: #5860d0;
+}
+.contenedorNombre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.indicadores{
+    background-color: var(--color-innoving-08);
+    padding: 20px;
+}
+
+.button {
+    padding: 10px;
+    margin-right: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    background-color: var(--color-principal);
+    color: var(--color-innoving-08);
+    border: 1px solid var(--color-innoving-08);
+    border-radius: 5px;
+}
+.evidencias {
+    background-color: red;
+}
