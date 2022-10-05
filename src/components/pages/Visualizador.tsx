@@ -6,7 +6,7 @@ import { Modal } from '../utilidades/Modal'
 
 export const Visualizador = () => {
 
-  const [isOpenModal, setIsOpenModal] = useState(true);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const openModal = ()=> {
     setIsOpenModal(true);
