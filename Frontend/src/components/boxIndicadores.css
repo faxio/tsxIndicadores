@@ -1,3 +1,7 @@
+:root {
+    --color-acordeon: #000D6B;
+}
+
 .contenedorBox{
     display: flex;
     flex-direction: row;
@@ -7,7 +11,7 @@
 }
 
 .boxPrincipal{
-    background-color: #ffd900;
+    background-color: #E0D98C;
     width: 200px;
     margin-top: 10px;
     margin-left: 15px;
@@ -19,14 +23,30 @@
 .home {
     margin: 5px;
 }
+.contenedorHome{
+    padding-left: 60px;
+    padding-right: 60px;
+}
 .busquedaHome{
     border: 1px solid black;
 }
 .itemsAcordeonHome{
-    background-color: grey;
+
+    background-color: var(--color-acordeon);
 }
 
 .contenedorEjes{
     background-color: white;
 }
 
+.acordeon2 {
+    color: white;
+    
+}
+
+details[open].acordeon2 summary{
+    color: #FF5DA2;
+}
+body {
+    background-color: #9C19E0;
+}

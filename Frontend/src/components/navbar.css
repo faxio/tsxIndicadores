@@ -42,6 +42,7 @@
     left: 6px;
     z-index: 99;
     font-size: 22px;
+    color: black;
 }
 
 
@@ -72,7 +73,7 @@
     margin-bottom: 15px;
 }
 
-.innoving{
+.innoving, .innovin2{
     display: flex;
     text-decoration: none;
     padding-bottom: 10px;
@@ -81,6 +82,24 @@
     justify-content: center;
 
 }
+.innovin2 {
+    justify-content: flex-start;
+    background-color: black;
+    margin: -5px -5px 20px -5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    
+
+    align-items: center;
+
+}
+.b2{
+    margin-top: 10px;
+    width: 40%;
+    margin-left: 20px;
+}
+
 
 .logo {
     max-width: 220px;
@@ -97,6 +116,9 @@
 }
 .acordeon:hover{
     color: var(--color-texto-hover);
+}
+details[open].acordeon summary{
+    color: black;
 }
 
 @media screen and (max-width: 768px){
