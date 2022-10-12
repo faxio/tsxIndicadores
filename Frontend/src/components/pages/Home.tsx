@@ -26,24 +26,19 @@ export const Home = ( props: {ejes: Array<Ejes>}) => {
               <details className='acordeon' key={ejes.id}>
                 <summary>{ejes.nombre}</summary>
                 <div className='subItems'>
-                  <NavLink 
-                    className={ ({isActive}) => `items ${isActive? 'itemsActive':''}`}
-                    to="indicador/1"> Indicador1</NavLink>
-                  <NavLink 
-                        className={ ({isActive}) => `items ${isActive? 'itemsActive':''}`}
-                        to="indicador/2"> Indicador2</NavLink>
+                <div className='contenedorBox'>
+          <BoxIndicador nombre={"Numero de publicaciones"}/>
+          <BoxIndicador nombre={"Numero de publicaciones de ingeniería"}/>
+          <BoxIndicador nombre={"Publicaciones con couator(es) extranjeros"}/>
+          <BoxIndicador nombre={" Número de grados de ingeniería otorgados (pregrado)"}/>
+        </div>
                 </div>
             </details>
               )
             })}
           </div>
 
-        <div className='contenedorBox'>
-          <BoxIndicador nombre={"Numero de publicaciones"}/>
-          <BoxIndicador nombre={"Numero de publicaciones de ingeniería"}/>
-          <BoxIndicador nombre={"Publicaciones con couator(es) extranjeros"}/>
-          <BoxIndicador nombre={" Número de grados de ingeniería otorgados (pregrado)"}/>
-        </div>
+
       </div>
     </div>
   )
