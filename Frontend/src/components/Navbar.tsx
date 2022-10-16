@@ -7,6 +7,7 @@ export const Navbar = () => {
 
   const navigate = useNavigate();
   const [ejesIn, setEjesIn] = useState(ejes);
+  const [indicadores, setIndicadores] = useState(indicadoresResumidos)
 
   return (
     <nav className='navbar'>
@@ -29,14 +30,21 @@ export const Navbar = () => {
               return(
               <details className='acordeon' key={ejes.id}>
                 <summary>{ejes.nombre}</summary>
-                <div className='subItems'>
-                  <NavLink 
-                    className={ ({isActive}) => `items ${isActive? 'itemsActive':''}`}
-                    to="indicador/1"> Indicador1</NavLink>
-                  <NavLink 
-                        className={ ({isActive}) => `items ${isActive? 'itemsActive':''}`}
-                        to="indicador/2"> Indicador2</NavLink>
-                </div>
+
+                {indicadores.map( indi => {
+                  return (
+                    (ejes.nombre === indi.eje) ?     
+                    <div className='subItems' key={indi.id}>
+                      <NavLink 
+                      className={ ({isActive}) => `items ${isActive? 'itemsActive':''}`}
+                      to={`/indicador/${indi.id}`}> {indi.nombre}</NavLink>
+                    </div>
+                    : []
+                  )
+                })}
+
+                
+
             </details>
               )
             })}

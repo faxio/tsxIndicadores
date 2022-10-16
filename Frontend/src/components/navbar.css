@@ -16,11 +16,13 @@
     flex-direction: column;
     padding: 20px;
     height: 100vh;
+    overflow-y: scroll;
 }
 .buscadorCompleto{
     position: relative;
-    height: 40px;
+    min-height: 40px;
     margin-bottom: 10px;
+    width: auto;
 }
 .inputSearch{
     position: absolute;
@@ -120,6 +122,27 @@
 details[open].acordeon summary{
     color: black;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(121, 181, 49); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(23, 154, 93); 
+  }
+
 
 @media screen and (max-width: 768px){
 	.navbar {

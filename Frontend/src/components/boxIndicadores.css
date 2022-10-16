@@ -4,22 +4,12 @@
 
 .contenedorBox{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    height: 400px;
+
 }
 
-.boxPrincipal{
-    background-color: #E0D98C;
-    width: 200px;
-    margin-top: 10px;
-    margin-left: 15px;
-    margin-right: 10px;
-    border: 3px solid black;
-    border-radius: 12px;
-    padding: 5px;
-}
 .home {
     margin: 5px;
 }
