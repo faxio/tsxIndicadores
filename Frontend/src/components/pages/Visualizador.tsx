@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import doc01 from "../../assets/documentoPrueba.pdf"
+import { BotonSimple, BotonIcon, BotonExtendido } from '../styledUnique/Buttons';
 import { Modal } from '../utilidades/Modal'
 
 
@@ -17,9 +18,12 @@ export const Visualizador = () => {
   }
   return (
     <>
-        <button onClick={openModal} className="button evidencias">
-          Publicación 1
-        </button>
+        <BotonIcon>
+          <i onClick={openModal} className='bx bxs-file-pdf'></i>
+        </BotonIcon>
+        <BotonSimple onClick={openModal}>Editar</BotonSimple>
+        <BotonExtendido >Confirmar</BotonExtendido>
+
         <Modal isOpen={isOpenModal} closeModal={closeModal}/>
         {/**/}
     </>

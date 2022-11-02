@@ -1,13 +1,17 @@
+import { ThemeProvider } from 'styled-components'
 import './App.css'
 import "./components/Contenido.css"
 import "./components/navbar.css"
+import theme from './components/Themes/Theme'
 import { AppRouter } from './router/AppRouter'
 
 function App() {
 
   return (
     <>
-      <AppRouter/>
+      <ThemeProvider theme={theme}>
+        <AppRouter/>
+      </ThemeProvider>
     </>
 
   )
