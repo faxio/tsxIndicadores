@@ -3,7 +3,7 @@ import "./modal.css"
 import doc01 from "../../assets/documentoPrueba.pdf"
 import { Texto, TextoNegrita } from '../styledUnique/Texto'
 import { BotonExtendido } from '../styledUnique/Buttons'
-import { TextoEmergente, VentanaEmergente } from '../styledUnique/VentanasEmergentes'
+import { InputPublicación, Publicacion, TextoEmergente, TextoPublicacion, VentanaEmergente } from '../styledUnique/VentanasEmergentes'
 
 export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
 
@@ -15,21 +15,21 @@ export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
 
   return (
     <VentanaEmergente isOpen={props.isOpen} onClick={props.closeModal}>
-        <TextoEmergente className='modalText' onClick={handleModalDialogClick}>
+        <TextoEmergente onClick={handleModalDialogClick}>
             
 
-            <div className='publicacion'>
+            <Publicacion>
                 <iframe  height="100%" width="100%" src={doc01}></iframe>
-            </div>
-            <div className='inputPublicacion'>
+            </Publicacion>
+            <TextoPublicacion className='inputPublicacion'>
                 <TextoNegrita> Verificar valores </TextoNegrita>
-                <input placeholder='Eje'/>
-                <input placeholder='Nombre'/>
-                <input placeholder='Publicador'/>
-                <input placeholder='Integrantes'/>
-                <input placeholder='Numero Publicacion'/>
+                <InputPublicación placeholder='Eje'/>
+                <InputPublicación placeholder='Nombre'/>
+                <InputPublicación placeholder='Publicador'/>
+                <InputPublicación placeholder='Integrantes'/>
+                <InputPublicación placeholder='Numero Publicacion'/>
                 <BotonExtendido> Confirmar </BotonExtendido>
-            </div>
+            </TextoPublicacion>
         </TextoEmergente>
 
 

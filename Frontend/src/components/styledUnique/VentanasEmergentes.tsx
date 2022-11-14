@@ -41,3 +41,15 @@ export const Publicacion = styled.div`
         height: 100vh;
     }
 `
+
+export const TextoPublicacion = styled.div`
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+`
+
+export const InputPublicación = styled.input`
+    margin: 5px;
+    padding: 5px;
+`

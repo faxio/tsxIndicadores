@@ -1,14 +1,3 @@
-.modalText{
-    position: relative;
-    background: #ddd;
-    padding: 30px 10px 5px;
-    width: 800px;
-    height: 600px;
-    display: grid;
-    grid-template-areas: "publicacion texto";
-    grid-template-columns: 2fr 1fr;
-
-}
 
 .float {
     position: absolute;
@@ -17,32 +6,4 @@
     padding-left: 2px;
     padding-right: 2px;
 }
-.publicacion {
-    grid-area: publicacion;
-    width: 100%;
-    height: 100%;
-}
-.inputPublicacion {
-    grid-area: texto;
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-.inputPublicacion input {
-    margin: 5px;
-    padding: 5px;
-}
 
-@media screen and (max-width: 1000px){
-	.modalText {
-        width: 600px;
-        height: 600px;
-        grid-template-areas: "publicacion" "texto";
-        grid-template-columns: 1fr;
-        grid-template-rows: 4fr 1fr;
-        overflow-y: scroll;
-	}
-    .publicacion{
-        height: 100vh;
-    }
-}

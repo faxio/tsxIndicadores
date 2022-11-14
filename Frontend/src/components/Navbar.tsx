@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { ejes, indicadoresResumidos } from '../components/apifake'
 import logosvg from '../assets/logo.svg'
+import { ContenedorBuscador } from './styledUnique/Input/Buscadores';
 
 export const Navbar = () => {
 
@@ -15,7 +16,7 @@ export const Navbar = () => {
             <img className="logo" src={logosvg}/>
           </Link>
 
-          <div className='buscadorCompleto'> 
+          <ContenedorBuscador> 
             <span className='buscador'> 
               <i className='bx bx-search'></i>
             </span>
@@ -23,8 +24,8 @@ export const Navbar = () => {
               className='inputSearch' 
               placeholder='Buscar'
             />
+          </ContenedorBuscador>
 
-          </div>
           <div className='itemsAcordeon'>
             {ejesIn.map(ejes => {
               return(
