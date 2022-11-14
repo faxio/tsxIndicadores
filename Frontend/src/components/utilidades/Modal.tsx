@@ -3,6 +3,7 @@ import "./modal.css"
 import doc01 from "../../assets/documentoPrueba.pdf"
 import { Texto, TextoNegrita } from '../styledUnique/Texto'
 import { BotonExtendido } from '../styledUnique/Buttons'
+import { TextoEmergente, VentanaEmergente } from '../styledUnique/VentanasEmergentes'
 
 export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
 
@@ -10,9 +11,11 @@ export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
         e.stopPropagation();
     }
 
+  {/*<VentanaEmergente className={`${props.isOpen && 'modal-open'}`} onClick={props.closeModal}>*/}
+
   return (
-    <div className={`modal ${props.isOpen && 'modal-open'}`} onClick={props.closeModal}>
-        <div className='modalText' onClick={handleModalDialogClick}>
+    <VentanaEmergente isOpen={props.isOpen} onClick={props.closeModal}>
+        <TextoEmergente className='modalText' onClick={handleModalDialogClick}>
             
 
             <div className='publicacion'>
@@ -27,10 +30,10 @@ export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
                 <input placeholder='Numero Publicacion'/>
                 <BotonExtendido> Confirmar </BotonExtendido>
             </div>
-        </div>
+        </TextoEmergente>
 
 
 
-    </div>
+    </VentanaEmergente>
   )
 }
