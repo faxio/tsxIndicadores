@@ -1,5 +1,4 @@
 import React from 'react'
-import "./modal.css"
 import doc01 from "../../assets/documentoPrueba.pdf"
 import { Texto, TextoNegrita } from '../styledUnique/Texto'
 import { BotonExtendido } from '../styledUnique/Buttons'

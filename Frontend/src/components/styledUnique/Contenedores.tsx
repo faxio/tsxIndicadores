@@ -32,3 +32,22 @@ export const BoxEvidencias = styled(Box)`
 export const Stack = styled.div`
     display: inline;
 `
+
+export const Topbar = styled.div`
+    display: flex;
+    flex-direction: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: ${props => props.theme.colorInnoving.negro};
+    padding: 10px;
+    margin-bottom: 20px;
+    @media (max-width: 750px) {
+        flex-direction: column;
+        padding-right: 20px;
+    }
+`
+
+export const ContenedorIndicador = styled.div`
+    background-color: ${props => props.theme.colorInnoving.blanco};
+    padding: 20px;
+`

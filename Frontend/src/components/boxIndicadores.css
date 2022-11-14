@@ -7,19 +7,12 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-
-}
-
-.home {
-    margin: 5px;
 }
 .contenedorHome{
     padding-left: 60px;
     padding-right: 60px;
 }
-.busquedaHome{
-    border: 1px solid black;
-}
+
 .itemsAcordeonHome{
 
     background-color: var(--color-acordeon);
