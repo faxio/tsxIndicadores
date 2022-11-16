@@ -51,3 +51,16 @@ export const ContenedorIndicador = styled.div`
     background-color: ${props => props.theme.colorInnoving.blanco};
     padding: 20px;
 `
+
+export const ContenedorGrid = styled.div`
+    display: grid;
+    grid-template-columns: 300px calc(100% - 300px) ;
+    grid-template-areas: "navbar contenido";
+    grid-template-rows: auto;
+    @media screen and (max-width: 768px){
+        grid-template-columns: 100%;
+        height: auto;
+		grid-template-areas: "navbar"
+                             "contenido";
+    }
+`

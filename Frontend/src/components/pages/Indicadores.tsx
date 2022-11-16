@@ -5,7 +5,7 @@ import doc01 from "../../assets/documentoPrueba.pdf"
 import { Navbar } from '../Navbar'
 import { indicadoresResumidos } from '../apifake'
 import { IndicadoresResumidos as indi } from '../interfaces'
-import { Box, BoxEvidencias, ContenedorIndicador, Stack } from '../styledUnique/Contenedores'
+import { Box, BoxEvidencias, ContenedorGrid, ContenedorIndicador, Stack } from '../styledUnique/Contenedores'
 import { VariablesIndicadores } from '../styledUnique/Input/VariablesIndicadores'
 import { Texto, TextoBlock, TextoBlockTable, TextoTitulo, TextoTituloNegrita } from '../styledUnique/Texto'
 
@@ -21,7 +21,7 @@ export const Indicadores = () => {
     
 
     return (
-      <div className='contenedor'>
+      <ContenedorGrid>
         <Navbar/>
         <ContenedorIndicador>
           <h2>Nombre indicador: {indicador?.nombre}</h2>
@@ -40,6 +40,6 @@ export const Indicadores = () => {
 
           {/*console.log(idIndicador)*/}
         </ContenedorIndicador>
-      </div>
+      </ContenedorGrid>
     )
 }

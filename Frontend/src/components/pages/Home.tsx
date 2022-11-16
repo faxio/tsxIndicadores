@@ -29,8 +29,6 @@ export const Home = ( props: {ejes: Array<Ejes>, indicadoresResumidos: Array<Ind
       <div className='contenedorHome'>
 
 
-      <div className='contenedorEjes'>
-
       <div className='itemsAcordeon itemsAcordeonHome'>
             {ejesIn.map(ejes => {
               return(
@@ -50,9 +48,6 @@ export const Home = ( props: {ejes: Array<Ejes>, indicadoresResumidos: Array<Ind
               )
             })}
           </div>
-
-
-        </div>
       </div>
     </>
   )
