@@ -1,5 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv'
+import EjesModule from './src/modules/ejes.module';
+import indicadoresModule from './src/modules/indicadores.module';
 
 class App {
   public server;
@@ -26,7 +28,8 @@ class App {
   }
 
   routes() {
-    // TODO: agregar rutas
+    this.server.use(EjesModule.routes);
+    this.server.use(indicadoresModule.routes);
   }
 }
 
