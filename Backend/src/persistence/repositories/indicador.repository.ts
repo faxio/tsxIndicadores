@@ -22,4 +22,4 @@ class IndicadorRepository {
 
 }
 
-export default new IndicadorRepository;
+export default new IndicadorRepository();

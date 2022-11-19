@@ -11,4 +11,4 @@ class IndicadoresModule {
     }
 }
 
-export default new IndicadoresModule;
+export default new IndicadoresModule();
