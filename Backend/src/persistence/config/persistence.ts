@@ -15,8 +15,8 @@ class Persistence {
       <string> process.env.DB_USER,
       <string> process.env.DB_PASSWORD,
       {
-	host: <string> process.env.DB_HOST,
-	dialect: <Dialect> process.env.DB_DRIVER
+        host: <string> process.env.DB_HOST,
+        dialect: <Dialect> process.env.DB_DRIVER
       }
     );
 

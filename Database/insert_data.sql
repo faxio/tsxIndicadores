@@ -77,40 +77,40 @@ INSERT INTO publicacion VALUES
 
 INSERT INTO Variables VALUES
 (
-  "V1",
+  1
   "publicacion"
 ),
 (
-  "V2",
+  2
   "publicacion de ingenieria"
 ),
 (
-  "V3",
+  3
   "Coautor exxtrangero"
 );
 
 
 INSERT INTO Publicaciones_Indicadores VALUES
 (
-  "PM1",
+  1,
   2,
   "M25"
 ),
 (
-  "PM2",
+  2,
   3,
   "M25"
 );
 
 INSERT INTO Publicaciones_Variables VALUES 
 (
-  "PV1",
+  1,
   1,
   2,
   "V1"
 ),
 (
-  "PV2",
+  2,
   1,
   3,
   "V1"

@@ -33,12 +33,12 @@ CREATE TABLE publicacion (
 );
 
 CREATE TABLE Variables (
-  id VARCHAR(10) NOT NULL PRIMARY KEY,
+  id INT AUTO INCREMENT PRIMARY KEY,
   descripcion VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Indicadores_Variables (
-  id_ind_var VARCHAR(10) NOT NULL PRIMARY KEY,
+  id_ind_var INT AUTO INCREMENT PRIMARY KEY,
   id_indicador VARCHAR(10) NOT NULL,
   id_variable VARCHAR(10) NOT NULL,
   FOREIGN KEY (id_indicador) REFERENCES Indicadores(id),
@@ -46,7 +46,7 @@ CREATE TABLE Indicadores_Variables (
 );
 
 CREATE TABLE Publicaciones_Variables (
-  id_pub_var VARCHAR(10) NOT NULL PRIMARY KEY,
+  id_pub_var INT AUTO INCREMENT PRIMARY KEY,
   valor INT NOT NULL,
   id_publicacion INT NOT NULL,
   id_variable VARCHAR(10) NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE Publicaciones_Variables (
 );
 
 CREATE TABLE Publicaciones_Indicadores (
-  id_pub_ind VARCHAR(10) NOT NULL PRIMARY KEY,
+  id_pub_ind INT AUTO INCREMENT PRIMARY KEY,
   id_publicacion INT NOT NULL,
   id_indicador VARCHAR(10) NOT NULL,
   FOREIGN KEY (id_publicacion) REFERENCES publicacion(publicacion_id),
