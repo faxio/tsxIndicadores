@@ -2,7 +2,7 @@ import { Dialect, Sequelize } from 'sequelize'
 import dotenv from 'dotenv'
 
 class Persistence {
-  public persistence: any;
+  public persistence: Sequelize;
   public production: boolean = false;
 
   constructor() {

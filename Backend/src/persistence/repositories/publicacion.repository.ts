@@ -33,11 +33,18 @@ class PublicacionRepository {
 
         console.log(`[PUBLICACION_REPOSITORY] idIndicador ${idIndicador}`);
 
-        let publicaciones: any[] = await persistence.query(`
-            SELECT * FROM publicacion
+        let [publicaciones, _meta]: any[] = await persistence.query(`
+            SELECT publicacion_id,
+            titulo,
+            issn_doi,
+            autores,
+            revista,
+            disciplina,
+            autores_extranjeros,
+            anio FROM publicacion
             JOIN Publicaciones_Indicadores AS P_I ON P_I.id_publicacion=publicacion.publicacion_id
-            WHERE P_i.id_indicador="${idIndicador}"
-        `)
+            WHERE P_I.id_indicador="${idIndicador}"
+        `);
 
         if (publicaciones.length == 0) {
             throw new Error();
