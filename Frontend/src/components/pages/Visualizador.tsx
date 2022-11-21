@@ -22,7 +22,7 @@ export const Visualizador = () => {
           <i onClick={openModal} className='bx bxs-file-pdf'></i>
         </BotonIcon>
         <BotonSimple onClick={openModal}>Editar</BotonSimple>
-        <BotonExtendido >Confirmar</BotonExtendido>
+
 
         <Modal isOpen={isOpenModal} closeModal={closeModal}/>
         {/**/}

@@ -23,10 +23,7 @@ export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
             <TextoPublicacion className='inputPublicacion'>
                 <TextoNegrita> Verificar valores </TextoNegrita>
                 <InputPublicación placeholder='Eje'/>
-                <InputPublicación placeholder='Nombre'/>
-                <InputPublicación placeholder='Publicador'/>
-                <InputPublicación placeholder='Integrantes'/>
-                <InputPublicación placeholder='Numero Publicacion'/>
+
                 <BotonExtendido> Confirmar </BotonExtendido>
             </TextoPublicacion>
         </TextoEmergente>

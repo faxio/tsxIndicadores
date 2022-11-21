@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from 'react-router-dom';
 
 
 export const BotonSimple = styled.button`
@@ -25,3 +25,33 @@ export const BotonIcon = styled.i`
     cursor: pointer;
     position: relative;
 `
+
+export const LinkInnoving = styled(Link)`
+    display: flex;
+    text-decoration: none;
+    padding-bottom: 10px;
+    font-size:x-large;
+    color: ${props => props.theme.colorInnoving.blanco};
+    justify-content: center;
+`
+
+export const LinkInnoving2 = styled(LinkInnoving)`
+    justify-content: flex-start;
+    background-color: black;
+    margin: 0px 0px 20px 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 100vw;
+    align-items: center;
+`
+
+
+
+/*
+    background-color: ${props => props.theme.colorInnoving.moradoClaro};
+    color: ${props => props.theme.colorInnoving.blanco};
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+    transition: all 0.4 ease;
+*/

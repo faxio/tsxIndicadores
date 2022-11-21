@@ -4,6 +4,8 @@ import { ejes, indicadoresResumidos } from '../components/apifake'
 import logosvg from '../assets/logo.svg'
 import { Buscador, ContenedorBuscador, ContenedorIconBuscador } from './styledUnique/Input/Buscadores';
 import { LogoInnoving } from './styledUnique/Imagenes';
+import { ContenedorItemsAcordeon, ContenedorMiniItems, ContenedorNavbar } from './styledUnique/Contenedores';
+import { LinkInnoving } from './styledUnique/Buttons';
 
 export const Navbar = () => {
 
@@ -12,10 +14,10 @@ export const Navbar = () => {
   const [indicadores, setIndicadores] = useState(indicadoresResumidos)
 
   return (
-    <nav className='navbar'>
-          <Link className='innoving' to="/">
+    <ContenedorNavbar >
+          <LinkInnoving className='innoving' to="/">
             <LogoInnoving  src={logosvg}/>
-          </Link>
+          </LinkInnoving>
 
           <ContenedorBuscador> 
             <ContenedorIconBuscador> 
@@ -26,7 +28,7 @@ export const Navbar = () => {
             />
           </ContenedorBuscador>
 
-          <div className='itemsAcordeon'>
+          <ContenedorItemsAcordeon>
             {ejesIn.map(ejes => {
               return(
               <details className='acordeon' key={ejes.id}>
@@ -35,11 +37,11 @@ export const Navbar = () => {
                 {indicadores.map( indi => {
                   return (
                     (ejes.nombre === indi.eje) ?     
-                    <div className='subItems' key={indi.id}>
+                    <ContenedorMiniItems key={indi.id}>
                       <NavLink 
                       className={ ({isActive}) => `items ${isActive? 'itemsActive':''}`}
                       to={`/indicador/${indi.id}`}> {indi.nombre}</NavLink>
-                    </div>
+                    </ContenedorMiniItems>
                     : []
                   )
                 })}
@@ -49,7 +51,7 @@ export const Navbar = () => {
             </details>
               )
             })}
-          </div>
-    </nav>
+          </ContenedorItemsAcordeon>
+    </ContenedorNavbar>
   )
 }
