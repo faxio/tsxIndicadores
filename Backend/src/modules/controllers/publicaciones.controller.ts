@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import PublicacionRepository from '../../persistence/repositories/publicacion.repository';
+import PublicacionIndicadorRepository from '../../persistence/repositories/publicacionIndicador.repository';
 
 class PublicacionesController {
     public getPublicaciones(req: Request, res: Response) {
@@ -18,6 +19,20 @@ class PublicacionesController {
             }, error => {
                 res.status(404).json({status: false});
             });
+    }
+
+    public editPublicaciones(req: Request, res: Response) {
+        const { accion, content } = req.body;
+        // TODO: validar body
+        if(accion === "asignar_indicador") {
+            PublicacionIndicadorRepository.createRelation(content).then(() => {
+                res.status(202).json({status: true});
+            }, erro => {
+                res.status(404).json({status: false});
+            })
+        }
+
+        res.status(404).json({status:false});
     }
 }
 

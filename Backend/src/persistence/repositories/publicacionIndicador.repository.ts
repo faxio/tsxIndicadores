@@ -3,7 +3,8 @@ import PublicacionIndicadorModel from "../models/publicacionIndicador.model";
 
 class PublicacionIndicadorRepository {
     public async createRelation(pubInd: PublicacionIndicador) {
-        await PublicacionIndicadorModel.create(pubInd);
+        const res = await PublicacionIndicadorModel.create(pubInd);
+        console.log(res.toJSON());
     }
 }
 

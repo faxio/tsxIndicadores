@@ -18,40 +18,32 @@ PublicacionModel.init({
         allowNull: true
     },
     autores: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
     },
     revista: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
     },
     autores_extranjeros: {
         type: DataTypes.TINYINT,
-        allowNull: true
     },
     indexacion: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
     },
     anio: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
     },
     citaciones: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
     },
     clasificacion: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
     },
     disciplina: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
     },
     estado: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.STRING,
+        allowNull: false
     },
 },{
     tableName: "publicacion",
