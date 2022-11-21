@@ -2,6 +2,7 @@ import React from 'react'
 import { Visualizador } from '../pages/Visualizador'
 import { BotonExtendido } from '../styledUnique/Buttons'
 import { BoxEvidencias, Stack } from '../styledUnique/Contenedores'
+import { OptionIndicadores, SelectIndicadores } from '../styledUnique/Select'
 import { EtiquetasIndicadores, Texto, TextoBlockTable, TextoTituloNegrita } from '../styledUnique/Texto'
 
 export const EvidenciaSinIndicador = (props:{type:string}) => {
@@ -13,7 +14,12 @@ export const EvidenciaSinIndicador = (props:{type:string}) => {
             <TextoTituloNegrita>Nombre evidencia: </TextoTituloNegrita>
             <TextoBlockTable>
               <Stack>
-              <Visualizador/>
+              <Visualizador buttonName="Agregar indicadores">
+                <SelectIndicadores >
+                  <OptionIndicadores> Agregar Indicadores</OptionIndicadores>
+                  <OptionIndicadores> C</OptionIndicadores>
+                </SelectIndicadores>
+              </Visualizador>
               
               </Stack>
             </TextoBlockTable>

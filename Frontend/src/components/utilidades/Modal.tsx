@@ -4,7 +4,7 @@ import { Texto, TextoNegrita } from '../styledUnique/Texto'
 import { BotonExtendido } from '../styledUnique/Buttons'
 import { InputPublicación, Publicacion, TextoEmergente, TextoPublicacion, VentanaEmergente } from '../styledUnique/VentanasEmergentes'
 
-export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
+export const Modal = (props:{isOpen: boolean, closeModal:any, children: any}) => {
 
     const handleModalDialogClick = (e:any) => {
         e.stopPropagation();
@@ -21,11 +21,11 @@ export const Modal = (props:{isOpen: boolean, closeModal:any}) => {
                 <iframe  height="100%" width="100%" src={doc01}></iframe>
             </Publicacion>
             <TextoPublicacion className='inputPublicacion'>
-                <TextoNegrita> Verificar valores </TextoNegrita>
-                <InputPublicación placeholder='Eje'/>
+            {props.children? props.children: []}
 
-                <BotonExtendido> Confirmar </BotonExtendido>
             </TextoPublicacion>
+
+
         </TextoEmergente>
 
 
