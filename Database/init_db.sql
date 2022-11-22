@@ -7,7 +7,7 @@ USE innoving;
 CREATE TABLE Ejes (nombre VARCHAR(250) NOT NULL PRIMARY KEY);
 
 CREATE TABLE Indicadores (
-  id VARCHAR(10) NOT NULL PRIMARY KEY,
+  id VARCHAR(255) NOT NULL PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   descripcion VARCHAR(300),
   nombre_eje VARCHAR(250) NOT NULL,
@@ -33,31 +33,31 @@ CREATE TABLE publicacion (
 );
 
 CREATE TABLE Variables (
-  id INT AUTO INCREMENT PRIMARY KEY,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   descripcion VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Indicadores_Variables (
-  id_ind_var INT AUTO INCREMENT PRIMARY KEY,
-  id_indicador VARCHAR(10) NOT NULL,
-  id_variable VARCHAR(10) NOT NULL,
+  id_ind_var INT PRIMARY KEY AUTO_INCREMENT,
+  id_indicador VARCHAR(255) NOT NULL,
+  id_variable INT NOT NULL,
   FOREIGN KEY (id_indicador) REFERENCES Indicadores(id),
   FOREIGN KEY (id_variable) REFERENCES Variables(id)
 );
 
 CREATE TABLE Publicaciones_Variables (
-  id_pub_var INT AUTO INCREMENT PRIMARY KEY,
+  id_pub_var INT PRIMARY KEY AUTO_INCREMENT,
   valor INT NOT NULL,
   id_publicacion INT NOT NULL,
-  id_variable VARCHAR(10) NOT NULL,
+  id_variable INT NOT NULL,
   FOREIGN KEY (id_publicacion) REFERENCES publicacion(publicacion_id),
   FOREIGN KEY (id_variable) REFERENCES Variables(id)
 );
 
 CREATE TABLE Publicaciones_Indicadores (
-  id_pub_ind INT AUTO INCREMENT PRIMARY KEY,
+  id_pub_ind INT PRIMARY KEY AUTO_INCREMENT,
   id_publicacion INT NOT NULL,
-  id_indicador VARCHAR(10) NOT NULL,
+  id_indicador VARCHAR(255) NOT NULL,
   FOREIGN KEY (id_publicacion) REFERENCES publicacion(publicacion_id),
   FOREIGN KEY (id_indicador) REFERENCES Indicadores(id)
 );

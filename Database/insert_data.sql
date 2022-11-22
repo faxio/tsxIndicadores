@@ -77,15 +77,15 @@ INSERT INTO publicacion VALUES
 
 INSERT INTO Variables VALUES
 (
-  1
+  1,
   "publicacion"
 ),
 (
-  2
+  2,
   "publicacion de ingenieria"
 ),
 (
-  3
+  3,
   "Coautor exxtrangero"
 );
 
@@ -107,11 +107,11 @@ INSERT INTO Publicaciones_Variables VALUES
   1,
   1,
   2,
-  "V1"
+  1
 ),
 (
   2,
   1,
   3,
-  "V1"
+  1
 );
