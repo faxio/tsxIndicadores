@@ -44,7 +44,8 @@ INSERT INTO publicacion VALUES
   "citaicon",
   "clasificacion 1",
   "descipcion 3",
-  "Rechazado"
+  "Rechazado",
+  "fue rechazado por que si"
 ),
 (
   2,
@@ -58,7 +59,8 @@ INSERT INTO publicacion VALUES
   "citaicon 2",
   "clasificacion 2",
   "descipcion 2",
-  "Verificado"
+  "Verificado",
+  Null
 ),
 (
   3,
@@ -72,7 +74,8 @@ INSERT INTO publicacion VALUES
   "citaicon 3",
   "clasificacion 3",
   "descipcion 3",
-  "Verificado"
+  "Verificado",
+  Null
 );
 
 INSERT INTO Variables VALUES
@@ -102,7 +105,7 @@ INSERT INTO Publicaciones_Indicadores VALUES
   "M25"
 );
 
-INSERT INTO Publicaciones_Variables VALUES 
+INSERT INTO Variables_Publicaciones VALUES 
 (
   1,
   1,

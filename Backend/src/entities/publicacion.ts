@@ -11,6 +11,7 @@ export class Publicacion {
     public clasificacion: string;
     public disciplina: string;
     public estado: string;
+    public comentario: string | undefined;
 
     constructor(
         publicacionId: number,
@@ -25,6 +26,7 @@ export class Publicacion {
         clasificacion: string,
         disciplina: string,
         estado: string,
+        comentario: string | undefined
     ) {
         this.publicacion_id = publicacionId;
         this.issn_doi = issDoi;
@@ -38,6 +40,7 @@ export class Publicacion {
         this.clasificacion = clasificacion;
         this.disciplina = disciplina;
         this.estado = estado;
+        this.comentario = comentario;
 
     }
   

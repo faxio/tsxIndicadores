@@ -45,6 +45,9 @@ PublicacionModel.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    comentario: {
+        type: DataTypes.STRING,
+    }
 },{
     tableName: "publicacion",
     timestamps: false,

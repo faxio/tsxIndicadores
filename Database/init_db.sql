@@ -29,6 +29,7 @@ CREATE TABLE publicacion (
   clasificacion varchar(100),
   disciplina varchar(100),
   estado VARCHAR(100) NOT NULL,
+  comentario VARCHAR(300),
   FOREIGN KEY (estado) REFERENCES Estados(estado)
 );
 
@@ -45,8 +46,8 @@ CREATE TABLE Indicadores_Variables (
   FOREIGN KEY (id_variable) REFERENCES Variables(id)
 );
 
-CREATE TABLE Publicaciones_Variables (
-  id_pub_var INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE Variables_Publicaciones (
+  id INT PRIMARY KEY AUTO_INCREMENT,
   valor INT NOT NULL,
   id_publicacion INT NOT NULL,
   id_variable INT NOT NULL,

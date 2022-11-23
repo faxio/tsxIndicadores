@@ -17,6 +17,7 @@ class PublicacionRepository {
                 "disciplina",
                 "autores_extranjeros",
                 "anio",
+                "comentario"
             ],
             where: (estado!=undefined) ? {
                 estado
