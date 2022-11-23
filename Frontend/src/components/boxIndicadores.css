@@ -1,33 +1,5 @@
-:root {
-    --color-acordeon: #000D6B;
-}
-
-.contenedorBox{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-.contenedorHome{
-    padding-left: 60px;
-    padding-right: 60px;
-}
-
-.itemsAcordeonHome{
-
-    background-color: var(--color-acordeon);
-}
-
-
-
-.acordeon2 {
-    color: white;
-    
-}
 
 details[open].acordeon2 summary{
     color: #FF5DA2;
 }
-body {
-    background-color: #9C19E0;
-}
+

@@ -8,6 +8,7 @@ import { IndicadoresResumidos as indi } from '../interfaces'
 import { Box, BoxEvidencias, ContenedorGrid, ContenedorIndicador, Stack } from '../styledUnique/Contenedores'
 import { VariablesIndicadores } from '../styledUnique/Input/VariablesIndicadores'
 import { Texto, TextoBlock, TextoBlockTable, TextoTitulo, TextoTituloNegrita } from '../styledUnique/Texto'
+import { EvidenciasIndicador } from '../utilidades/EvidenciasIndicador'
 
 
 export const Indicadores = () => {
@@ -27,18 +28,8 @@ export const Indicadores = () => {
           <h2>Nombre indicador: {indicador?.nombre}</h2>
           <h2>Todas las evidencias</h2>
 
-          <BoxEvidencias type="error">
-            <TextoTituloNegrita>Nombre evidencia</TextoTituloNegrita>
-            <TextoBlockTable>
-              <Texto>Variable 1: </Texto>
-              <Texto>Variable 2: </Texto>
-              <Stack>
-              <Visualizador/>
-              </Stack>
-            </TextoBlockTable>
-          </BoxEvidencias>
-
-          {/*console.log(idIndicador)*/}
+          <EvidenciasIndicador type="error"/>
+          <EvidenciasIndicador type="bien"/>
         </ContenedorIndicador>
       </ContenedorGrid>
     )
