@@ -7,7 +7,8 @@ class PublicacionModel extends Model<Publicacion> {}
 PublicacionModel.init({
     publicacion_id: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true,
     },
     issn_doi: {
         type: DataTypes.STRING,

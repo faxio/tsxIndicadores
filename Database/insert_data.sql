@@ -28,7 +28,7 @@ INSERT INTO Indicadores VALUES
 );
 
 
-INSERT INTO Estados VALUES ("Verificado"), ("Rechazado"), ("En revicion");
+INSERT INTO Estados VALUES ("Verificado"), ("Rechazado"), ("En revision");
 
 /**  adaptar con la de eviencia */
 INSERT INTO publicacion VALUES
@@ -118,3 +118,5 @@ INSERT INTO Variables_Publicaciones VALUES
   3,
   1
 );
+
+INSERT INTO Indicadores_Variables VALUES (NULL, "M25", 1), (NULL, "M26", 2), (NULL, "M49", 3);

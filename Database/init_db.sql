@@ -39,7 +39,7 @@ CREATE TABLE Variables (
 );
 
 CREATE TABLE Indicadores_Variables (
-  id_ind_var INT PRIMARY KEY AUTO_INCREMENT,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   id_indicador VARCHAR(255) NOT NULL,
   id_variable INT NOT NULL,
   FOREIGN KEY (id_indicador) REFERENCES Indicadores(id),

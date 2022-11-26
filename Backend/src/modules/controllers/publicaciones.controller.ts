@@ -1,9 +1,7 @@
 import { Request, Response } from 'express';
-import { PublicacionIndicador } from '../../entities/publicacionIndicador';
 import { VariablePublicacion } from '../../entities/variablePublicacion';
 
 import PublicacionRepository from '../../persistence/repositories/publicacion.repository';
-import PublicacionIndicadorRepository from '../../persistence/repositories/publicacionIndicador.repository';
 import variablePublicacionRepository from '../../persistence/repositories/variablePublicacion.repository';
 
 class PublicacionesController {
@@ -41,17 +39,10 @@ class PublicacionesController {
             /**
              * content = id_indicadores[]
              * 
-             * createRelation( {id_indicador, id_publicacion} )
-             * 
              * newValue( {id_publicacion, id_variable, valor=1} )
              * 
              */
             content.map( async (idIndicador: string) => {
-                console.log('hola esto es un ciclo');
-                await PublicacionIndicadorRepository.createRelation(
-                    new PublicacionIndicador(+idPublicacion, idIndicador)
-                );
-                    
                 const idVar: number = (idIndicador==='M25') ? 1 : (idIndicador==='M26') ? 2 : 3;                
 
                 await variablePublicacionRepository.newValue(    
@@ -63,9 +54,21 @@ class PublicacionesController {
             res.status(202).json({status: true});
             
             return;
+        } else if (accion==='cambiar_estado') {
+
+            /**
+             * content: {estado, comentario?}
+             */
+            PublicacionRepository.updatePublicacion(+idPublicacion, content).then( response => {
+                res.status(202).json({status: true});
+            }, error => {
+                console.log(`error ${error}`);
+                res.status(404).json({status:false})
+            });
+
         }
 
-        res.status(404).json({status:false});
+        // res.status(404).json({status:false});
     }
 }
 

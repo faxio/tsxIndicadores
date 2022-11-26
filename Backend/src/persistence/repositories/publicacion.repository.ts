@@ -43,14 +43,33 @@ class PublicacionRepository {
             disciplina,
             autores_extranjeros,
             anio FROM publicacion
-            JOIN Publicaciones_Indicadores AS P_I ON P_I.id_publicacion=publicacion.publicacion_id
-            WHERE P_I.id_indicador="${idIndicador}"
+            JOIN Variables_Publicaciones pv ON pv.id_publicacion=publicacion_id
+            JOIN Variables v ON v.id=pv.id_variable
+            JOIN Indicadores_Variables iv ON iv.id_variable=v.id
+            JOIN Indicadores i ON iv.id_indicador=i.id
+            WHERE i.id="${idIndicador}"
         `);
 
         if (publicaciones.length == 0) {
             throw new Error();
         }
         return (<Publicacion[]> publicaciones);
+    }
+
+
+    public async updatePublicacion(id: number, publicacion: Publicacion) {
+        console.log("SE realizara la consulta")
+        const response: any = await PublicacionModel.update(
+            publicacion,
+            {
+                where: {
+                    publicacion_id: id
+                }
+            });
+        console.log("hellooooo")
+
+        console.log(`response: ${response}`);
+        console.log("hello from updatePublicacion")
     }
 }
 
