@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { Publicacion } from '../../entities/publicacion';
 import { VariablePublicacion } from '../../entities/variablePublicacion';
 
 import PublicacionRepository from '../../persistence/repositories/publicacion.repository';
@@ -23,53 +24,59 @@ class PublicacionesController {
             });
     }
 
-    public editPublicacion(req: Request, res: Response) {
+    public editEstadoPublicacion(req: Request, res: Response) {
         const { idPublicacion } = req.params;
-        const { accion, content } = req.body;
+        const content = req.body;
 
         console.log(`[idPublicacion]: ${idPublicacion}`);
-        console.log(`[accion]: ${accion}`);
         console.log(`[content]: ${content}`);
-
-
-        // TODO: validar body
-        
-        if(accion === "asignar_indicadores") {
             
-            /**
-             * content = id_indicadores[]
-             * 
-             * newValue( {id_publicacion, id_variable, valor=1} )
-             * 
-             */
-            content.map( async (idIndicador: string) => {
+        // TODO: validar body
+            
+        /**
+         * content: {
+         *  estado,
+         *  if(estado==='rechazado') comentario
+         *      * eliminar variables
+         * 
+         *  if(estado==='Verificado') indicadores[]
+         *      * borrar comentario
+         * 
+         *  if(estado==='En revision') undefined
+         *      * eliminar variables
+         * }
+         */
+            
+        if (content['estado'] === 'Verificado') {
+            PublicacionRepository.updatePublicacion(+idPublicacion, new Publicacion({...content}))
+            
+            content['indicadores'].map( async (idIndicador: string) => {
                 const idVar: number = (idIndicador==='M25') ? 1 : (idIndicador==='M26') ? 2 : 3;                
-
+        
                 await variablePublicacionRepository.newValue(    
                     new VariablePublicacion(idVar, +idPublicacion, 1)
                 );
-
+        
+        
             })
-
             res.status(202).json({status: true});
-            
             return;
-        } else if (accion==='cambiar_estado') {
 
-            /**
-             * content: {estado, comentario?}
-             */
-            PublicacionRepository.updatePublicacion(+idPublicacion, content).then( response => {
-                res.status(202).json({status: true});
-            }, error => {
-                console.log(`error ${error}`);
-                res.status(404).json({status:false})
-            });
+        } 
 
-        }
+        PublicacionRepository.updatePublicacion(+idPublicacion, new Publicacion({...content})).then( response => {
+            
+            variablePublicacionRepository.deleteValuesByIdPub(+idPublicacion).then(response => {
+                res.status(200).json({status: true});
+            }, error => res.status(404).json({status:false}))
+            
+        }, error => {
+            console.log(`error ${error}`);
+            res.status(404).json({status:false})
+        });
 
-        // res.status(404).json({status:false});
     }
+
 }
 
 export default new PublicacionesController();

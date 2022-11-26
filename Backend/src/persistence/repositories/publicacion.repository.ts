@@ -58,7 +58,6 @@ class PublicacionRepository {
 
 
     public async updatePublicacion(id: number, publicacion: Publicacion) {
-        console.log("SE realizara la consulta")
         const response: any = await PublicacionModel.update(
             publicacion,
             {
@@ -66,10 +65,8 @@ class PublicacionRepository {
                     publicacion_id: id
                 }
             });
-        console.log("hellooooo")
 
-        console.log(`response: ${response}`);
-        console.log("hello from updatePublicacion")
+        console.log(`[UPDATE PUBLICACION] response: ${response}`);
     }
 }
 

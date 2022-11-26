@@ -93,6 +93,7 @@ INSERT INTO Variables VALUES
 );
 
 
+/**
 INSERT INTO Publicaciones_Indicadores VALUES
 (
   1,
@@ -104,6 +105,7 @@ INSERT INTO Publicaciones_Indicadores VALUES
   3,
   "M25"
 );
+*/
 
 INSERT INTO Variables_Publicaciones VALUES 
 (

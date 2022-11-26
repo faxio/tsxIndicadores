@@ -1,17 +1,17 @@
 export class Publicacion {
     public publicacion_id: number | undefined;
-    public issn_doi: string;
-    public titulo: string;
-    public autores: string;
-    public revista: string;
-    public autores_extranjeros: number;
-    public indexacion: string;
-    public anio: string;
-    public citaciones: string;
-    public clasificacion: string;
-    public disciplina: string;
-    public estado: string;
-    public comentario: string | undefined;
+    public issn_doi?: string;
+    public titulo?: string;
+    public autores?: string;
+    public revista?: string;
+    public autores_extranjeros?: number;
+    public indexacion?: string;
+    public anio?: string;
+    public citaciones?: string;
+    public clasificacion?: string;
+    public disciplina?: string;
+    public estado?: string;
+    public comentario?: string | null;
 /*
     constructor(
         issDoi: string,
@@ -43,18 +43,18 @@ export class Publicacion {
     }
 */
     constructor(publicacion: {
-        issDoi: string,
-        titulo: string,
-        autores: string,
-        revista: string,
-        autoresExtranjeros: number,
-        indexacion: string,
-        anio: string,
-        citaciones: string,
-        clasificacion: string,
-        disciplina: string,
-        estado: string,
-        comentario: string | undefined
+        issDoi?: string,
+        titulo?: string,
+        autores?: string,
+        revista?: string,
+        autoresExtranjeros?: number,
+        indexacion?: string,
+        anio?: string,
+        citaciones?: string,
+        clasificacion?: string,
+        disciplina?: string,
+        estado?: string,
+        comentario?: string | null
     }){
         this.issn_doi = publicacion.issDoi;
         this.titulo = publicacion.titulo;
@@ -67,24 +67,7 @@ export class Publicacion {
         this.clasificacion = publicacion.clasificacion;
         this.disciplina = publicacion.disciplina;
         this.estado = publicacion.estado;
-        this.comentario = publicacion.comentario;
+        this.comentario = publicacion.comentario ?? null;
     }
   
-
-    toJson() {
-        return {
-            issn_doi: this.issn_doi,
-            titulo: this.titulo,
-            autores: this.autores,
-            revista: this.revista,
-            autores_extranjeros: this.autores_extranjeros,
-            indexacion: this.indexacion,
-            anio: this.anio,
-            citaciones: this.citaciones,
-            clasificacion: this.clasificacion,
-            disciplina: this.disciplina,
-            estado: this.estado,
-            comentario: this.comentario
-        };
-    }
 }

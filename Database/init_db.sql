@@ -55,6 +55,7 @@ CREATE TABLE Variables_Publicaciones (
   FOREIGN KEY (id_variable) REFERENCES Variables(id)
 );
 
+/**
 CREATE TABLE Publicaciones_Indicadores (
   id_pub_ind INT PRIMARY KEY AUTO_INCREMENT,
   id_publicacion INT NOT NULL,
@@ -62,3 +63,4 @@ CREATE TABLE Publicaciones_Indicadores (
   FOREIGN KEY (id_publicacion) REFERENCES publicacion(publicacion_id),
   FOREIGN KEY (id_indicador) REFERENCES Indicadores(id)
 );
+*/
