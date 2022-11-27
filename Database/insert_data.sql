@@ -1,10 +1,10 @@
 USE innoving;
 
 INSERT INTO Ejes VALUES
-  ("Eje 1"),
-  ("Eje 2"),
-  ("Eje 3"),
-  ("El ultimo eje");
+  (1,"Eje 1"),
+  (2,"Eje 2"),
+  (3,"Eje 3"),
+  (4,"El ultimo eje");
 
 
 INSERT INTO Indicadores VALUES

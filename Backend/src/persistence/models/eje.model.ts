@@ -6,6 +6,11 @@ import persistence from "../config/persistence";
 class EjeModel extends Model<Eje> {}
 
 EjeModel.init({
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true
+    },
     nombre: {
         type: DataTypes.STRING,
         allowNull: false,

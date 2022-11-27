@@ -5,14 +5,12 @@ import IndicadorModel from "../models/indicador.model";
 class IndicadorRepository {
     
     public async findIndicadores(eje: string | undefined): Promise<Indicador[]> {
-        let indicadores: any[] = (eje!=undefined) ? await IndicadorModel.findAll({
+        let indicadores: any[] = await IndicadorModel.findAll({
             attributes: ["id", "nombre", "descripcion"],
-            where: {
+            where: (eje!=undefined) ? {
                 nombre_eje: eje
-            }
-        }) : await IndicadorModel.findAll({
-            attributes: ["id", "nombre", "descripcion"],
-        });
+            } : undefined
+        })
 
         if (indicadores.length == 0) {
             throw new Error();
